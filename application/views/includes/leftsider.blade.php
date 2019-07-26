@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ site_url('beranda') }}" class="brand-link bg-primary">
+    <a href="{{ site_url('') }}" class="brand-link bg-primary">
         <img src="{{ asset('cpanel/img/_logo.png') }}" alt="Logo" class="brand-image"
             style="opacity: .8">
         <span class="brand-text font-weight"><b>{{ getenv('APP_NAME') }}</b></span>
@@ -23,7 +23,7 @@
                 <!-- Add icons to the links using the .nav-icon class
             with font-awesome or any other icon font library -->
                 <li class="nav-item {{ @$activeMenu == 'beranda' ? 'menu-open' : '' }}">
-                    <a href="{{ site_url('beranda') }}" class="nav-link {{ @$activeMenu == 'beranda' ? 'active' : '' }}">
+                    <a href="{{ site_url('') }}" class="nav-link {{ @$activeMenu == 'beranda' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-dashboard"></i>
                         <p>
                             Beranda
