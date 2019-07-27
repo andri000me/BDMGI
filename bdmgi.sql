@@ -18,7 +18,7 @@ CREATE TABLE bis (
   PlatNomor char(11) NOT NULL,
   IdBisJenis int(11) NOT NULL,
   NamaBis varchar(30) NOT NULL,
-  Harga double NOT NULL
+  Harga int(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /* --- */
@@ -35,7 +35,8 @@ CREATE TABLE jadwal (
   IdJadwal int(11) NOT NULL,
   IdRute int(11) NOT NULL,
   PlatNomor char(11) NOT NULL,
-  Waktu time NOT NULL
+  Waktu time NOT NULL,
+	BiayaPerjalanan int(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /* --- */

@@ -24,7 +24,9 @@ class Bis extends CI_Controller {
 
 	public function create()
 	{
+		$data_get = $this->bisjenis_model->get_list();
 		$data = array(
+			'info_bisjenis' => $data_get,
             'title' => 'Tambah Bis Baru'
         );
 		$this->slice->view('pages.bis.form', $data);
@@ -49,11 +51,13 @@ class Bis extends CI_Controller {
 	
 	public function edit($id) {
 		$data_get = $this->bis_model->get_data($id);
+		$data_get2 = $this->bisjenis_model->get_list();
 		if (empty($data_get)) {
 			redirect('bis');
 		}
 		$data = array(
 			'info' => $data_get,
+			'info_bisjenis' => $data_get2,
             'title' => 'Ubah Bis #'.$id
         );
 		$this->slice->view('pages.bis.form', $data);

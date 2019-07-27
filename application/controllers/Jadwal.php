@@ -24,7 +24,11 @@ class Jadwal extends CI_Controller {
 
 	public function create()
 	{
+		$data_get1 = $this->rute_model->get_list();
+		$data_get2 = $this->bis_model->get_list();
 		$data = array(
+			'info_rute' => $data_get1,
+			'info_bis' => $data_get2,
             'title' => 'Tambah Jadwal Baru'
         );
 		$this->slice->view('pages.jadwal.form', $data);
@@ -35,6 +39,7 @@ class Jadwal extends CI_Controller {
 		$this->form_validation->set_rules('IdRute', 'Rute', 'required');
 		$this->form_validation->set_rules('PlatNomor', 'Plat Nomor (Bis)', 'required');
 		$this->form_validation->set_rules('Waktu', 'Waktu Keberangkatan', 'required');
+		$this->form_validation->set_rules('BiayaPerjalanan', 'Biaya Perjalanan', 'required');
 
 		if($this->form_validation->run() === FALSE) {
 			$this->session->set_flashdata('error', validation_errors());
@@ -63,6 +68,7 @@ class Jadwal extends CI_Controller {
 		$this->form_validation->set_rules('IdRute', 'Rute', 'required');
 		$this->form_validation->set_rules('PlatNomor', 'Plat Nomor (Bis)', 'required');
 		$this->form_validation->set_rules('Waktu', 'Waktu Keberangkatan', 'required');
+		$this->form_validation->set_rules('BiayaPerjalanan', 'Biaya Perjalanan', 'required');
 
 		if($this->form_validation->run() === FALSE) {
 			$this->session->set_flashdata('error', validation_errors());

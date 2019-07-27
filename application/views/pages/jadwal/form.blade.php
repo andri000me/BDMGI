@@ -71,7 +71,16 @@
 									</div>
 									<div class="form-group">
                                         <label for="Waktu">Waktu Keberangkatan</label>
-                                        <input type="text" id="time" class="form-control" name="Waktu" placeholder="Waktu Keberangkatan" value="{{ @$info ? @$info->Waktu : '' }}">
+										<div class="input-group date" id="time" data-target-input="nearest">
+											<input type="text" class="form-control datetimepicker-input" name="Waktu" value="{{ @$info_data->Waktu }}" data-target="#time"/>
+											<div class="input-group-append" data-target="#time" data-toggle="datetimepicker">
+												<div class="input-group-text"><i class="fa fa-clock-o"></i></div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+                                        <label for="Waktu">Biaya Perjalanan</label>
+                                        <input type="text" class="form-control" name="BiayaPerjalanan" placeholder="Biaya Perjalanan" value="{{ @$info ? @$info->BiayaPerjalanan : '' }}">
 									</div>
                                 </div>
                             </div>
@@ -93,9 +102,8 @@
     <script type="text/javascript">
         $(function () {
             $('#time').datetimepicker({
-                format : 'hh:mm:ss',
-                ignoreReadonly: true
-            });
+				format: 'HH:mm:ss'
+			});
         });
     </script>
     <script type="text/javascript" src="{{ asset('cpanel/vendor/bootstrap-datetimepicker/moment.js') }}"></script>

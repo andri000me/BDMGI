@@ -64,6 +64,7 @@
 									<th>Rute (ID Rute)</th>
 									<th>Bis (Plat Nomor)</th>
 									<th>Waktu</th>
+									<th>Biaya Perjalanan</th>
 									<th>Aksi</th>
                                 </tr>
                             </thead>
@@ -74,6 +75,7 @@
 									<td>{{ $info_data->IdRute }}</td>
 									<td>{{ $info_data->PlatNomor }}</td>
 									<td>{{ $info_data->Waktu }}</td>
+									<td>{{ $info_data->BiayaPerjalanan }}</td>
 									<td>
 										<a href="{{ site_url('jadwal/edit/'.$info_data->IdJadwal) }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
 										<a href="{{ site_url('jadwal/destroy/'.$info_data->IdJadwal) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>

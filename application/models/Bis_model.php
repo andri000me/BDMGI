@@ -24,6 +24,7 @@ class Bis_model extends CI_Model {
 	public function store()
 	{
 		$data = array(
+			'PlatNomor' => $this->input->post('PlatNomor'),
 			'IdBisJenis' => $this->input->post('IdBisJenis'),
 			'NamaBis' => $this->input->post('NamaBis'),
 			'Harga' => $this->input->post('Harga')
@@ -34,6 +35,7 @@ class Bis_model extends CI_Model {
 	public function update($id)
 	{
 		$data = array(
+			'PlatNomor' => $this->input->post('PlatNomor'),
 			'IdBisJenis' => $this->input->post('IdBisJenis'),
 			'NamaBis' => $this->input->post('NamaBis'),
 			'Harga' => $this->input->post('Harga')

@@ -46,12 +46,12 @@
                             <div class="row">
                                 <div class="col-lg-12">
 									<div class="form-group">
-                                        <label for="PlatNomor">Plat Nomor</label>
-                                        <input type="text" class="form-control" name="PlatNomor" placeholder="Plat Nomor (Bis)" value="{{ @$info ? @$info->PlatNomor : '' }}" {{ @$info ? 'readonly' : '' }}>
+                                        <label for="PlatNomor">Plat Nomor (Spasi Diganti dengan Underscore)</label>
+                                        <input id="platnomor" type="text" class="form-control" name="PlatNomor" placeholder="Plat Nomor (Bis)" value="{{ @$info ? @$info->PlatNomor : '' }}" {{ @$info ? 'readonly' : '' }}>
 									</div>
 									<div class="form-group">
                                         <label for="IdBisJenis">Jenis Bis</label>
-                                        <select class="form-control" name="PlatNomor" id="">
+                                        <select class="form-control" name="IdBisJenis">
 											@if(@$info_bisjenis)
 											@foreach ($info_bisjenis as $info_data)
 											<option value="{{ @$info_data->IdBisJenis }}" {{ (@$info_data->IdBisJenis==@$info->IdBisJenis) ? 'selected' : '' }}>{{ @$info_data->NamaJenis }}</option>
@@ -63,7 +63,7 @@
 									</div>
 									<div class="form-group">
                                         <label for="NamaBis">Nama Bis</label>
-                                        <input type="text" class="form-control" name="NamaBis" placeholder="Nama Bis" value="{{ @$info ? @$info->NamaBis : '' }}">
+                                        <input type="text" class="form-control" name="NamaBis" placeholder="Format: MGI-[JENISBIS]-[(NAMAPEMILIKSTNK)]" value="{{ @$info ? @$info->NamaBis : '' }}">
 									</div>
 									<div class="form-group">
                                         <label for="Harga">Harga Tiket Bis</label>
@@ -86,12 +86,12 @@
 @endsection
 
 @section('fscripts')
-    <script type="text/javascript">
+	<script type="text/javascript">
         $(function () {
-            $('#datetimepicker1').datetimepicker({
-                format : 'YYYY-MM-DD hh:mm:ss',
-                ignoreReadonly: true
-            });
+			$("#platnomor").on('input', function(key) {
+				var value = $(this).val();
+				$(this).val(value.replace(/ /g, '_').toUpperCase());
+			})
         });
     </script>
     <script type="text/javascript" src="{{ asset('cpanel/vendor/bootstrap-datetimepicker/moment.js') }}"></script>

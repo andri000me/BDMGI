@@ -49,4 +49,14 @@ class Kursi_model extends CI_Model {
 		return true;
 	}
 
+	public function store_generate($no)
+	{
+		$data = array(
+			'PlatNomor' => $this->input->post('PlatNomor'),
+			'NoKursi' => $no,
+			'StatusKursi' => 'Bisa Dipakai'
+		);
+		return $this->db->insert('kursi', $data);
+	}
+
 }

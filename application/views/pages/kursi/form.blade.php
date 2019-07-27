@@ -47,7 +47,7 @@
                                 <div class="col-lg-12">
 									<div class="form-group">
                                         <label for="PlatNomor">Plat Nomor (Bis)</label>
-										<select class="form-control" name="PlatNomor" id="">
+										<select class="form-control" name="PlatNomor">
 											@if(@$info_bis)
 											@foreach ($info_bis as $info_data)
 											<option value="{{ @$info_data->PlatNomor }}" {{ (@$info_data->PlatNomor==@$info->PlatNomor) ? 'selected' : '' }}>{{ @$info_data->PlatNomor }} ({{ @$info_data->NamaBis }})</option>
@@ -62,8 +62,11 @@
                                         <input type="text" class="form-control" name="NoKursi" placeholder="Nomor Kursi" value="{{ @$info ? @$info->NoKursi : '' }}">
 									</div>
 									<div class="form-group">
-                                        <label for="StatusKursi">Status Kursi</label>
-                                        <input type="text" class="form-control" name="StatusKursi" placeholder="Status Kursi" value="{{ @$info ? @$info->StatusKursi : '' }}">
+										<label for="StatusKursi">Status Kursi</label>
+										<select class="form-control" name="StatusKursi">
+											<option value="Bisa Dipakai" {{ (@$info->StatusKursi=='Bisa Dipakai') ? 'selected' : '' }}>Bisa Dipakai</option>
+											<option value="Belum Bisa Dipakai" {{ (@$info->StatusKursi=='Belum Bisa Dipakai') ? 'selected' : '' }}>Belum Bisa Dipakai</option>
+										</select>
 									</div>
                                 </div>
                             </div>

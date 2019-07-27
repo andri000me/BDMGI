@@ -13,9 +13,11 @@ class Kursi extends CI_Controller {
 
 	public function index()
 	{
-		$data_get = $this->kursi_model->get_list();
+		$data_get1 = $this->kursi_model->get_list();
+		$data_get2 = $this->bis_model->get_list();
 		$data = array(
-			'info' => $data_get,
+			'info' => $data_get1,
+			'info_bis' => $data_get2,
 			'activeMenu' => 'kursi',
             'title' => 'Kursi'
         );
@@ -24,7 +26,9 @@ class Kursi extends CI_Controller {
 
 	public function create()
 	{
+		$data_get = $this->bis_model->get_list();
 		$data = array(
+			'info_bis' => $data_get,
             'title' => 'Tambah Kursi Baru'
         );
 		$this->slice->view('pages.kursi.form', $data);
@@ -36,7 +40,7 @@ class Kursi extends CI_Controller {
 		$this->form_validation->set_rules('NoKursi', 'Nomor Kursi', 'required');
 		$this->form_validation->set_rules('StatusKursi', 'Status Kursi', 'required');
 
-		if($this->form_validation->run() === FALSE) {
+		if ($this->form_validation->run() === FALSE) {
 			$this->session->set_flashdata('error', validation_errors());
 			redirect('kursi/create');
 		} else {
@@ -80,4 +84,17 @@ class Kursi extends CI_Controller {
 		$this->session->set_flashdata('success', 'Kursi #'.$id.' telah terhapus');
 		redirect('kursi');
 	}
+
+	public function generate()
+    {
+		$this->form_validation->set_rules('Total', 'Jumlah Kursi', 'required');
+		$this->form_validation->set_rules('PlatNomor', 'Plat Nomor (Bis)', 'required');
+
+        for ($j = 1; $j <= $this->input->post('total'); $j++) {
+            $this->kursi_model->store_generate($j);
+		}
+		$this->session->set_flashdata('success', 'Kursi dengan jumlah ('.$this->input->post('total').') untuk Bis ('.$this->input->post('PlatNomor').') berhasil dibuat');
+        redirect('kursi');
+    }
+
 }

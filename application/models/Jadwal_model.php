@@ -26,7 +26,8 @@ class Jadwal_model extends CI_Model {
 		$data = array(
 			'IdRute' => $this->input->post('IdRute'),
 			'PlatNomor' => $this->input->post('PlatNomor'),
-			'Waktu' => $this->input->post('Waktu')
+			'Waktu' => $this->input->post('Waktu'),
+			'BiayaPerjalanan' => $this->input->post('BiayaPerjalanan')
 		);
 		return $this->db->insert('jadwal', $data);
 	}
@@ -36,7 +37,8 @@ class Jadwal_model extends CI_Model {
 		$data = array(
 			'IdRute' => $this->input->post('IdRute'),
 			'PlatNomor' => $this->input->post('PlatNomor'),
-			'Waktu' => $this->input->post('Waktu')
+			'Waktu' => $this->input->post('Waktu'),
+			'BiayaPerjalanan' => $this->input->post('BiayaPerjalanan')
 		);
 		$this->db->where('IdJadwal', $id);
 		return $this->db->update('jadwal', $data);
