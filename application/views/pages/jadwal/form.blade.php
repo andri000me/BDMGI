@@ -26,7 +26,7 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <form role="form" action="{{ @$info ? site_url('jadwal/update/'.$info->id) : site_url('jadwal/store') }}" enctype="multipart/form-data" method="POST">
+        <form role="form" action="{{ @$info ? site_url('jadwal/update/'.$info->IdJadwal) : site_url('jadwal/store') }}" enctype="multipart/form-data" method="POST">
             <div class="row">
                 <!-- left column -->
                 <div class="col-md-12">
@@ -59,7 +59,6 @@
 									</div>
 									<div class="form-group">
 										<label for="PlatNomor">Plat Nomor (Bis)</label>
-										<input type="text" class="form-control" name="Asal" placeholder="Asal Kota" value="{{ @$info ? @$info->Asal : '' }}">
 										<select class="form-control" name="PlatNomor" id="">
 											@if(@$info_bis)
 											@foreach ($info_bis as $info_data)

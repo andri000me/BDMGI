@@ -22,6 +22,7 @@ class Auth extends CI_Controller {
 		$login = $this->admin_model->do_login();
 		if ($login > 0) {
 			$data_session = array(
+				'idadmin' => $login->IdAdmin,
 				'username' => $login->Username
 			);
 			$this->session->set_userdata($data_session);

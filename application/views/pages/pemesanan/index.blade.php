@@ -48,9 +48,9 @@
                                 <label for="filter">
                                     <select id="table-data-filter-column" class="form-control form-control-sm">
 										<option>ID Pemesanan</option>
-										<option>Nomor Identitas</option>
-										<option>ID Jadwal</option>
-										<option>ID Admin</option>
+										<option>Pemesan (Nomor Identitas)</option>
+										<option>Jadwal (ID Jadwal)</option>
+										<option>Admin (ID Admin)</option>
 										<option>Jumlah Penumpang</option>
 										<option>Tanggal Pesan</option>
 										<option>Tanggal Berangkat</option>
@@ -64,9 +64,9 @@
                             <thead>
                                 <tr>
 									<th>ID Pemesanan</th>
-									<th>Nomor Identitas</th>
-									<th>ID Jadwal</th>
-									<th>ID Admin</th>
+									<th>Pemesan (Nomor Identitas)</th>
+									<th>Jadwal (ID Jadwal)</th>
+									<th>Admin (ID Admin)</th>
 									<th>Jumlah Penumpang</th>
 									<th>Tanggal Pesan</th>
 									<th>Tanggal Berangkat</th>

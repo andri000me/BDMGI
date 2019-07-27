@@ -24,6 +24,7 @@ class Pemesan_model extends CI_Model {
 	public function store()
 	{
 		$data = array(
+			'NoIdentitas' => $this->input->post('Noidentitas'),
 			'NamaPemesan' => $this->input->post('NamaPemesan'),
 			'Umur' => $this->input->post('Umur'),
 			'JenisKelamin' => $this->input->post('JenisKelamin'),
@@ -35,6 +36,7 @@ class Pemesan_model extends CI_Model {
 	public function update($id)
 	{
 		$data = array(
+			'NoIdentitas' => $this->input->post('Noidentitas'),
 			'NamaPemesan' => $this->input->post('NamaPemesan'),
 			'Umur' => $this->input->post('Umur'),
 			'JenisKelamin' => $this->input->post('JenisKelamin'),

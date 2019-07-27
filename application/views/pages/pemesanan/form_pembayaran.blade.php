@@ -10,13 +10,13 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>{{ @$info ? 'Ubah' : 'Tambah' }} Pemesanan Kursi <small></small></h1>
+                <h1>{{ @$info ? 'Ubah' : 'Tambah' }} Pembayaran <small></small></h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="{{ site_url('') }}">Beranda</a></li>
-					<li class="breadcrumb-item"><a href="{{ site_url('pemesanan_kursi') }}">Pemesanan Kursi</a></li>
-                    <li class="breadcrumb-item active">{{ @$info ? 'Ubah' : 'Tambah' }} Pemesanan Kursi</li>
+					<li class="breadcrumb-item"><a href="{{ site_url('pemesanan') }}">Pemesanan</a></li>
+                    <li class="breadcrumb-item active">{{ @$info ? 'Ubah' : 'Tambah' }} Pembayaran</li>
                 </ol>
             </div>
         </div>
@@ -26,14 +26,14 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <form role="form" action="{{ @$info ? site_url('pemesanan_kursi/update/'.$info->id) : site_url('pemesanan_kursi/store') }}" enctype="multipart/form-data" method="POST">
+        <form role="form" action="{{ site_url('pemesanan/pembayaran/store') }}" enctype="multipart/form-data" method="POST">
             <div class="row">
                 <!-- left column -->
                 <div class="col-md-12">
                     <!-- general form elements -->
                     <div class="card card-{{ @$info ? 'warning' : 'primary' }}">
                         <div class="card-header">
-                            <h3 class="card-title">Pemesanan Kursi</h3>
+                            <h3 class="card-title">Pembayaran</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
                                     <i class="fa fa-minus"></i></button>
@@ -47,26 +47,17 @@
                                 <div class="col-lg-12">
 									<div class="form-group">
                                         <label for="IdPemesanan">Pemesanan</label>
-										<select class="form-control" name="IdPemesanan" id="">
-											@if(@$info_pemesanan)
-											@foreach ($info_pemesanan as $info_data)
-											<option value="{{ @$info_data->IdPemesanan }}" {{ (@$info_data->IdPemesanan==@$info->IdPemesanan) ? 'selected' : '' }}>{{ @$info_data->NoIdentitas }} - ({{ @$info_data->Tanggal_Pesan }})</option>
-											@endforeach
-											@else
-											<option value="">-- PEMESANAN TIDAK TERSEDIA --</option>
-											@endif
-										</select>
+                                        <input type="text" class="form-control" value="{{ @$info_pemesanan->IdPemesanan }}" readonly>
 									</div>
 									<div class="form-group">
-                                        <label for="IdKursi">Kursi</label>
-										<select class="form-control" name="IdKursi" id="">
-											@if(@$info_kursi)
-											@foreach ($info_kursi as $info_data)
-											<option value="{{ @$info_data->IdKursi }}" {{ (@$info_data->IdKursi==@$info->IdKursi) ? 'selected' : '' }}>{{ @$info_data->IdKursi }} (Nomor: {{ @$info_data->NoKursi }})</option>
-											@endforeach
-											@else
-											<option value="">-- KURSI TIDAK TERSEDIA --</option>
-											@endif
+                                        <label for="TotalBayar">Total Pembayaran</label>
+                                        <input type="text" class="form-control" name="TotalBayar">
+									</div>
+									<div class="form-group">
+                                        <label for="Status">Status Pembayaran</label>
+                                        <select class="form-control" name="Status">
+											<option value="Lunas">LUNAS</option>
+											<option value="Belum Lunas">BELUM LUNAS</option>
 										</select>
 									</div>
                                 </div>

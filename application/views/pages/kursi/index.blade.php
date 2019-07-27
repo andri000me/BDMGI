@@ -41,13 +41,14 @@
                 <div class="card-body">
 					<div class="row">
 						<div class="col-md-6">
-							<a href="{{ site_url('kursi/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Kursi Bis</a>
+							<a href="{{ site_url('kursi/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Kursi Bis Baru</a>
 						</div>
                         <div class="col-md-6">
                             <div class="float-right">
                                 <label for="filter">
                                     <select id="table-data-filter-column" class="form-control form-control-sm">
-										<option>Bis (PlatNomor)</option>
+										<option>ID Kursi</option>
+										<option>Bis (Plat Nomor)</option>
 										<option>Nomor Kursi</option>
 										<option>Status Kursi</option>
                                     </select>
@@ -59,8 +60,8 @@
                         <table id="table-data" class="table table-bordered table-striped text-center table-responsive-sm">
                             <thead>
                                 <tr>
-									<th>#</th>
-									<th>Bis (PlatNomor)</th>
+									<th>ID Kursi</th>
+									<th>Bis (Plat Nomor)</th>
 									<th>Nomor Kursi</th>
 									<th>Status Kursi</th>
 									<th>Aksi</th>

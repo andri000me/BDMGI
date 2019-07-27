@@ -58,6 +58,75 @@ $route['auth/logout'] = 'auth/logout';
 
 $route['beranda'] = 'beranda/index';
 
+$route['alur/pemesanan'] = 'alur/pemesan';
+$route['alur/pemesanan/pemesan'] = 'alur/pemesan';
+$route['alur/pemesanan/store_pemesan'] = 'alur/store_pemesan';
+$route['alur/pemesanan/pemesanan'] = 'alur/pemesanan';
+$route['alur/pemesanan/store_pemesanan'] = 'alur/store_pemesanan';
+$route['alur/pemesanan/pemesanan_kursi'] = 'alur/pemesanan_kursi';
+$route['alur/pemesanan/store_pemesanan_kursi'] = 'alur/store_pemesanan_kursi';
+$route['alur/pemesanan/pembayaran'] = 'alur/pembayaran';
+$route['alur/pemesanan/store_pembayaran'] = 'alur/store_pembayaran';
+
+$route['bis'] = 'bis/index';
+$route['bis/create'] = 'bis/create';
+$route['bis/store'] = 'bis/store';
+$route['bis/edit/(:any)'] = 'bis/edit/$1';
+$route['bis/update/(:any)'] = 'bis/update/$1';
+$route['bis/destroy/(:any)'] = 'bis/destroy/$1';
+
+$route['bisjenis'] = 'bisjenis/index';
+$route['bisjenis/create'] = 'bisjenis/create';
+$route['bisjenis/store'] = 'bisjenis/store';
+$route['bisjenis/edit/(:any)'] = 'bisjenis/edit/$1';
+$route['bisjenis/update/(:any)'] = 'bisjenis/update/$1';
+$route['bisjenis/destroy/(:any)'] = 'bisjenis/destroy/$1';
+
+$route['jadwal'] = 'jadwal/index';
+$route['jadwal/create'] = 'jadwal/create';
+$route['jadwal/store'] = 'jadwal/store';
+$route['jadwal/edit/(:any)'] = 'jadwal/edit/$1';
+$route['jadwal/update/(:any)'] = 'jadwal/update/$1';
+$route['jadwal/destroy/(:any)'] = 'jadwal/destroy/$1';
+
+$route['kursi'] = 'kursi/index';
+$route['kursi/create'] = 'kursi/create';
+$route['kursi/store'] = 'kursi/store';
+$route['kursi/edit/(:any)'] = 'kursi/edit/$1';
+$route['kursi/update/(:any)'] = 'kursi/update/$1';
+$route['kursi/destroy/(:any)'] = 'kursi/destroy/$1';
+
+$route['pemesan'] = 'pemesan/index';
+$route['pemesan/create'] = 'pemesan/create';
+$route['pemesan/store'] = 'pemesan/store';
+$route['pemesan/edit/(:any)'] = 'pemesan/edit/$1';
+$route['pemesan/update/(:any)'] = 'pemesan/update/$1';
+$route['pemesan/destroy/(:any)'] = 'pemesan/destroy/$1';
+
+$route['rute'] = 'rute/index';
+$route['rute/create'] = 'rute/create';
+$route['rute/store'] = 'rute/store';
+$route['rute/edit/(:any)'] = 'rute/edit/$1';
+$route['rute/update/(:any)'] = 'rute/update/$1';
+$route['rute/destroy/(:any)'] = 'rute/destroy/$1';
+
+$route['pemesanan'] = 'pemesanan/index';
+$route['pemesanan/create'] = 'pemesanan/create';
+$route['pemesanan/store'] = 'pemesanan/store';
+$route['pemesanan/show/(:any)'] = 'pemesanan/show/$1';
+$route['pemesanan/edit/(:any)'] = 'pemesanan/edit/$1';
+$route['pemesanan/update/(:any)'] = 'pemesanan/update/$1';
+$route['pemesanan/destroy/(:any)'] = 'pemesanan/destroy/$1';
+
+$route['pemesanan/kursi/create/(:any)'] = 'pemesanan/create_kursi/$1';
+$route['pemesanan/kursi/store'] = 'pemesanan/store_kursi';
+$route['pemesanan/kursi/edit/(:any)'] = 'pemesanan/edit_kursi/$1';
+$route['pemesanan/kursi/update/(:any)'] = 'pemesanan/update_kursi/$1';
+$route['pemesanan/kursi/destroy/(:any)'] = 'pemesanan/destroy_kursi/$1';
+
+$route['pemesanan/pembayaran/create/(:any)'] = 'pemesanan/create_pembayaran/$1';
+$route['pemesanan/pembayaran/store'] = 'pemesanan/store_pembayaran';
+
 $route['admin'] = 'admin/index';
 $route['admin/create'] = 'admin/create';
 $route['admin/store'] = 'admin/store';

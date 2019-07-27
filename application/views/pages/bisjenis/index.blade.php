@@ -41,12 +41,13 @@
                 <div class="card-body">
 					<div class="row">
 						<div class="col-md-6">
-							<a href="{{ site_url('bisjenis/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Jenis Bis</a>
+							<a href="{{ site_url('bisjenis/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Jenis Bis Baru</a>
 						</div>
                         <div class="col-md-6">
                             <div class="float-right">
                                 <label for="filter">
                                     <select id="table-data-filter-column" class="form-control form-control-sm">
+										<option>ID Bis Jenis</option>
 										<option>Nama Jenis</option>
 										<option>Kapasitas</option>
                                     </select>

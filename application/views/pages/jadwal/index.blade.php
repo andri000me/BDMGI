@@ -41,14 +41,15 @@
                 <div class="card-body">
 					<div class="row">
 						<div class="col-md-6">
-							<a href="{{ site_url('jadwal/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Bis</a>
+							<a href="{{ site_url('jadwal/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Jadwal Baru</a>
 						</div>
                         <div class="col-md-6">
                             <div class="float-right">
                                 <label for="filter">
                                     <select id="table-data-filter-column" class="form-control form-control-sm">
-										<option>ID Rute</option>
-										<option>Plat Nomor</option>
+										<option>ID Jadwal</option>
+										<option>Rute (ID Rute)</option>
+										<option>Bis (Plat Nomor)</option>
 										<option>Waktu</option>
                                     </select>
                                 </label>
@@ -60,8 +61,8 @@
                             <thead>
                                 <tr>
 									<th>ID Jadwal</th>
-									<th>ID Rute</th>
-									<th>Plat Nomor</th>
+									<th>Rute (ID Rute)</th>
+									<th>Bis (Plat Nomor)</th>
 									<th>Waktu</th>
 									<th>Aksi</th>
                                 </tr>

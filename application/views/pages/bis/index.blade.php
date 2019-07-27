@@ -41,14 +41,14 @@
                 <div class="card-body">
 					<div class="row">
 						<div class="col-md-6">
-							<a href="{{ site_url('bis/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Bis</a>
+							<a href="{{ site_url('bis/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Bis Baru</a>
 						</div>
                         <div class="col-md-6">
                             <div class="float-right">
                                 <label for="filter">
                                     <select id="table-data-filter-column" class="form-control form-control-sm">
 										<option>Plat Nomor</option>
-										<option>ID Jenis Bis</option>
+										<option>Jenis Bis (ID Jenis Bis)</option>
 										<option>Nama Bis</option>
 										<option>Harga</option>
                                     </select>
@@ -61,7 +61,7 @@
                             <thead>
                                 <tr>
 									<th>Plat Nomor</th>
-									<th>ID Jenis Bis</th>
+									<th>Jenis Bis (ID Jenis Bis)</th>
 									<th>Nama Bis</th>
 									<th>Harga</th>
 									<th>Aksi</th>
