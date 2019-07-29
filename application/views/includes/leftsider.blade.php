@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-info elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ site_url('') }}" class="brand-link bg-primary">
+    <a href="{{ site_url('') }}" class="brand-link bg-info">
         <img src="{{ asset('cpanel/img/_logo.png') }}" alt="Logo" class="brand-image"
             style="opacity: .8">
         <span class="brand-text font-weight"><b>{{ getenv('APP_NAME') }}</b></span>

@@ -57,6 +57,8 @@ $route['auth/login'] = 'auth/login';
 $route['auth/logout'] = 'auth/logout';
 
 $route['beranda'] = 'beranda/index';
+$route['beranda/info/show/(:any)'] = 'beranda/info_show/$1';
+$route['beranda/info/confirm/(:any)'] = 'beranda/info_confirm/$1';
 
 $route['alur/pemesanan'] = 'alur/pemesan';
 $route['alur/pemesanan/pemesan'] = 'alur/pemesan';
