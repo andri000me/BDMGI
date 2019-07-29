@@ -11,7 +11,7 @@
         <div class="profile-canvas" style="background-image: linear-gradient(135deg,rgba(45,53,61,.79) 0,rgba(45,53,61,.5) 100%),url({{ asset('cpanel/img/bg.jpg') }})"></div>
         <a href="#" class="profile-link">
             <img src="{{ asset('cpanel/img/_admin.png') }}" alt="Logo" class="brand-image img-circle elevation-3">
-            <span class="brand-text profile-text font-weight-light"><b>{{ $this->session->username }}</b> <i class="fa fa-cog"></i></span>
+            <span class="brand-text profile-text font-weight-light"><b>{{ $this->session->username }}</b></span>
         </a>
     </div>
 
@@ -24,7 +24,7 @@
             with font-awesome or any other icon font library -->
                 <li class="nav-item {{ @$activeMenu == 'beranda' ? 'menu-open' : '' }}">
                     <a href="{{ site_url('') }}" class="nav-link {{ @$activeMenu == 'beranda' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-dashboard"></i>
+                        <i class="nav-icon fa fa-home"></i>
                         <p>
                             Beranda
                         </p>
@@ -46,11 +46,11 @@
                         </p>
                     </a>
 				</li>
-				<li class="nav-item {{ @$activeMenu == 'rute' ? 'menu-open' : '' }}">
-                    <a href="{{ site_url('rute') }}" class="nav-link {{ @$activeMenu == 'rute' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-road"></i>
+				<li class="nav-item {{ @$activeMenu == 'kursi' ? 'menu-open' : '' }}">
+                    <a href="{{ site_url('kursi') }}" class="nav-link {{ @$activeMenu == 'kursi' ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-table"></i>
                         <p>
-                            Rute
+                            Kursi
                         </p>
                     </a>
 				</li>
@@ -62,19 +62,20 @@
                         </p>
                     </a>
 				</li>
+				<li class="nav-header">MASTER</li>
 				<li class="nav-item {{ @$activeMenu == 'bisjenis' ? 'menu-open' : '' }}">
                     <a href="{{ site_url('bisjenis') }}" class="nav-link {{ @$activeMenu == 'bisjenis' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-bus"></i>
+                        <i class="nav-icon fa fa-certificate"></i>
                         <p>
                             Jenis Bis
                         </p>
                     </a>
 				</li>
-				<li class="nav-item {{ @$activeMenu == 'kursi' ? 'menu-open' : '' }}">
-                    <a href="{{ site_url('kursi') }}" class="nav-link {{ @$activeMenu == 'kursi' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-table"></i>
+				<li class="nav-item {{ @$activeMenu == 'rute' ? 'menu-open' : '' }}">
+                    <a href="{{ site_url('rute') }}" class="nav-link {{ @$activeMenu == 'rute' ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-road"></i>
                         <p>
-                            Kursi
+                            Rute
                         </p>
                     </a>
 				</li>

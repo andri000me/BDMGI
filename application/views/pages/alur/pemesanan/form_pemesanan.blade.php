@@ -68,7 +68,7 @@
                                 <div class="col-lg-12">
 									<div class="form-group">
                                         <label for="NoIdentitas">Nomor Identitas</label>
-                                        <input type="text" class="form-control" name="NoIdentitas" value="{{ $this->session->info_alur_pemesan }}">
+                                        <input type="text" class="form-control" name="NoIdentitas" value="{{ $this->session->info_alur_pemesan }}" readonly>
 									</div>
 									<div class="form-group">
                                         <label for="IdJadwal">Jadwal</label>
@@ -85,7 +85,7 @@
 									<div class="form-group">
                                         <label for="IdAdmin">Admin (Karyawan)</label>
                                         <select class="form-control" name="IdAdmin">
-											<option value="{{ @$info_admin->IdAdmin }}">{{ @$info_admin->username }} - ({{ @$info_admin->NamaLengkap }})</option>
+											<option value="{{ @$info_admin->IdAdmin }}">{{ @$info_admin->Username }} - ({{ @$info_admin->NamaLengkap }})</option>
 										</select>
 									</div>
 									<div class="form-group">
@@ -94,17 +94,32 @@
 									</div>
 									<div class="form-group">
                                         <label for="TanggalPesan">Tanggal Pesan</label>
-                                        <input id="tanggalpesan" type="text" class="form-control" name="TanggalPesan" placeholder="Tanggal Pesan">
+										<div class="form-group">
+											<div class="input-group date" id="tanggalpesan" data-target-input="nearest">
+												<input type="text" name="TanggalPesan" placeholder="Tanggal Pesan" class="form-control datetimepicker-input" data-target="#tanggalpesan" readonly/>
+												<div class="input-group-append" data-target="#tanggalpesan" data-toggle="datetimepicker">
+													<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+												</div>
+											</div>
+										</div>
 									</div>
 									<div class="form-group">
                                         <label for="TanggalBerangkat">Tanggal Berangkat</label>
-                                        <input id="tanggalberangkat" type="text" class="form-control" name="TanggalBerangkat" placeholder="Tanggal Berangkat">
+                                        <div class="form-group">
+											<div class="input-group date" id="tanggalberangkat" data-target-input="nearest">
+												<input type="text" name="TanggalBerangkat" placeholder="Tanggal Berangkat" class="form-control datetimepicker-input" data-target="#tanggalberangkat" readonly/>
+												<div class="input-group-append" data-target="#tanggalberangkat" data-toggle="datetimepicker">
+													<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+												</div>
+											</div>
+										</div>
+										<input type="hidden" class="form-control" name="StatusPemesanan" value="Dipesan">
 									</div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Selesai & Lanjut</button>
+                            <button type="submit" class="btn btn-primary">Tambah & Lanjut</button>
                         </div>
                     </div>
                     <!-- /.card -->
@@ -120,11 +135,11 @@
     <script type="text/javascript">
         $(function () {
             $('#tanggalpesan').datetimepicker({
-                format : 'YYYY-MM-DD hh:mm:ss',
+                format : 'YYYY-MM-DD',
                 ignoreReadonly: true
             });
 			$('#tanggalberangkat').datetimepicker({
-                format : 'YYYY-MM-DD hh:mm:ss',
+                format : 'YYYY-MM-DD',
                 ignoreReadonly: true
             });
         });

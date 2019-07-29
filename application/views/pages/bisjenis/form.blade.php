@@ -53,6 +53,10 @@
                                         <label for="Kapasitas">Kapasitas</label>
                                         <input type="text" class="form-control" name="Kapasitas" placeholder="Kapasitas" value="{{ @$info ? @$info->Kapasitas : '' }}">
 									</div>
+									<div class="form-group">
+                                        <label for="Harga">Harga</label>
+                                        <input type="text" class="form-control" name="Harga" placeholder="Harga" value="{{ @$info ? @$info->Harga : '' }}">
+									</div>
                                 </div>
                             </div>
                         </div>

@@ -25,7 +25,8 @@ class Bisjenis_model extends CI_Model {
 	{
 		$data = array(
 			'NamaJenis' => $this->input->post('NamaJenis'),
-			'Kapasitas' => $this->input->post('Kapasitas')
+			'Kapasitas' => $this->input->post('Kapasitas'),
+			'Harga' => $this->input->post('Harga')
 		);
 		return $this->db->insert('bisjenis', $data);
 	}
@@ -34,7 +35,8 @@ class Bisjenis_model extends CI_Model {
 	{
 		$data = array(
 			'NamaJenis' => $this->input->post('NamaJenis'),
-			'Kapasitas' => $this->input->post('Kapasitas')
+			'Kapasitas' => $this->input->post('Kapasitas'),
+			'Harga' => $this->input->post('Harga')
 		);
 		$this->db->where('IdBisJenis', $id);
 		return $this->db->update('bisjenis', $data);

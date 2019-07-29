@@ -34,6 +34,7 @@ class BisJenis extends CI_Controller {
 	{
 		$this->form_validation->set_rules('NamaJenis', 'Nama Jenis Bis', 'required');
 		$this->form_validation->set_rules('Kapasitas', 'Kapasitas', 'required');
+		$this->form_validation->set_rules('Harga', 'Harga', 'required');
 
 		if($this->form_validation->run() === FALSE) {
 			$this->session->set_flashdata('error', validation_errors());
@@ -61,6 +62,7 @@ class BisJenis extends CI_Controller {
 	{
 		$this->form_validation->set_rules('NamaJenis', 'Nama Jenis Bis', 'required');
 		$this->form_validation->set_rules('Kapasitas', 'Kapasitas', 'required');
+		$this->form_validation->set_rules('Harga', 'Harga', 'required');
 
 		if($this->form_validation->run() === FALSE) {
 			$this->session->set_flashdata('error', validation_errors());

@@ -47,7 +47,7 @@
                                 <div class="col-lg-12">
 									<div class="form-group">
                                         <label for="IdRute">Rute</label>
-                                        <select class="form-control" name="PlatNomor" id="">
+                                        <select class="form-control" name="IdRute">
 											@if(@$info_rute)
 											@foreach ($info_rute as $info_data)
 											<option value="{{ @$info_data->IdRute }}" {{ (@$info_data->IdRute==@$info->IdRute) ? 'selected' : '' }}>{{ @$info_data->Asal }} - {{ @$info_data->Tujuan }}</option>
@@ -72,7 +72,7 @@
 									<div class="form-group">
                                         <label for="Waktu">Waktu Keberangkatan</label>
 										<div class="input-group date" id="time" data-target-input="nearest">
-											<input type="text" class="form-control datetimepicker-input" name="Waktu" value="{{ @$info_data->Waktu }}" data-target="#time"/>
+											<input type="text" class="form-control datetimepicker-input" name="Waktu" value="{{ @$info_data->Waktu }}" data-target="#time" readonly/>
 											<div class="input-group-append" data-target="#time" data-toggle="datetimepicker">
 												<div class="input-group-text"><i class="fa fa-clock-o"></i></div>
 											</div>
@@ -102,7 +102,8 @@
     <script type="text/javascript">
         $(function () {
             $('#time').datetimepicker({
-				format: 'HH:mm:ss'
+				format: 'HH:mm:ss',
+				ignoreReadonly: true
 			});
         });
     </script>

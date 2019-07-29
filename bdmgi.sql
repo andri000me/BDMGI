@@ -17,8 +17,7 @@ INSERT INTO admin (IdAdmin, Username, Password, NamaLengkap) VALUES
 CREATE TABLE bis (
   PlatNomor char(11) NOT NULL,
   IdBisJenis int(11) NOT NULL,
-  NamaBis varchar(30) NOT NULL,
-  Harga int(7) NOT NULL
+  NamaBis varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /* --- */
@@ -26,7 +25,8 @@ CREATE TABLE bis (
 CREATE TABLE bisjenis (
   IdBisJenis int(11) NOT NULL,
   NamaJenis varchar(15) DEFAULT NULL,
-  Kapasitas int(11) NOT NULL
+  Kapasitas int(11) NOT NULL,
+  Harga int(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /* --- */
@@ -45,7 +45,7 @@ CREATE TABLE kursi (
   IdKursi int(11) NOT NULL,
   PlatNomor char(11) NOT NULL,
   NoKursi int(11) NOT NULL,
-  StatusKursi enum('Bisa Dipakai','Belum Bisa Dipakai') NOT NULL DEFAULT 'Bisa Dipakai'
+  StatusKursi enum('Kosong','Terisi') NOT NULL DEFAULT 'Kosong'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /* --- */
@@ -53,7 +53,9 @@ CREATE TABLE kursi (
 CREATE TABLE pembayaran (
   IdPemesanan int(11) NOT NULL,
   TotalBayar int(7) NOT NULL,
-  Status enum('Lunas','Belum Lunas') DEFAULT NULL
+  Status enum('Lunas','Belum Lunas') DEFAULT NULL,
+	Bayar int(7) NOT NULL,
+	Kembalian int(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /* --- */
@@ -75,7 +77,8 @@ CREATE TABLE pemesanan (
   IdAdmin int(11) NOT NULL,
   JumlahPenumpang int(11) NOT NULL,
   TanggalPesan date NOT NULL,
-  TanggalBerangkat date NOT NULL
+  TanggalBerangkat date NOT NULL,
+	StatusPemesanan enum('Dipesan','Batal','Sudah Dilayani') NOT NULL DEFAULT 'Dipesan'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /* --- */
@@ -185,4 +188,5 @@ ALTER TABLE pemesanan
   ADD FOREIGN KEY (NoIdentitas) REFERENCES pemesan (NoIdentitas);
 
 ALTER TABLE pemesanan_kursi
-  ADD FOREIGN KEY (IdPemesanan) REFERENCES pemesanan (IdPemesanan);
+  ADD FOREIGN KEY (IdPemesanan) REFERENCES pemesanan (IdPemesanan),
+	ADD FOREIGN KEY (IdKursi) REFERENCES kursi (IdKursi);

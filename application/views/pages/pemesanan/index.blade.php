@@ -41,7 +41,7 @@
                 <div class="card-body">
 					<div class="row">
 						<div class="col-md-6">
-							<a href="{{ site_url('pemesanan/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Pemesanan Baru</a>
+							<a href="{{ site_url('alur/pemesanan/pemesan') }}" class="btn btn-primary btn-xs"><span class="fa fa-plus"></span> Tambah Alur Pemesanan</a>
 						</div>
                         <div class="col-md-6">
                             <div class="float-right">
@@ -70,6 +70,8 @@
 									<th>Jumlah Penumpang</th>
 									<th>Tanggal Pesan</th>
 									<th>Tanggal Berangkat</th>
+									<th>Status Pemesanan</th>
+									<th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -82,8 +84,10 @@
 									<td>{{ $info_data->JumlahPenumpang }}</td>
 									<td>{{ $info_data->TanggalPesan }}</td>
 									<td>{{ $info_data->TanggalBerangkat }}</td>
+									<td>{{ $info_data->StatusPemesanan }}</td>
 									<td>
-										<a href="{{ site_url('pemesanan/edit/'.$info_data->IdPemesanan) }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
+											<a href="{{ site_url('pemesanan/show/'.$info_data->IdPemesanan) }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a>
+										<a href="{{ site_url('pemesanan/edit/'.$info_data->IdPemesanan) }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a>
 										<a href="{{ site_url('pemesanan/destroy/'.$info_data->IdPemesanan) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                     </td>
 								</tr>

@@ -31,7 +31,7 @@ class Alur extends CI_Controller {
 			$this->session->set_flashdata('error', validation_errors());
 			redirect('alur/pemesanan/pemesan');
 		} else {
-			$this->alur_model->store();
+			$this->alur_model->store_pemesan();
 			$alurdata = array(
 				'info_alur_pemesan'  => $this->input->post('NoIdentitas')
 			);
@@ -47,8 +47,8 @@ class Alur extends CI_Controller {
 			$this->session->set_flashdata('error', 'Anda harus mengisi formulir secara bertahap');
 			redirect('alur/pemesanan/pemesan');
 		}
-		$data_get1 = $this->jadwal_model->get_list();
-		$data_get2 = $this->admin_model->get_data($this->session->idadmin);
+		$data_get1 = $this->alur_model->get_list_jadwal();
+		$data_get2 = $this->alur_model->get_data_admin($this->session->idadmin);
 		$data = array(
 			'info_jadwal' => $data_get1,
 			'info_admin' => $data_get2,
@@ -65,12 +65,13 @@ class Alur extends CI_Controller {
 		$this->form_validation->set_rules('JumlahPenumpang', 'Jumlah Penumpang', 'required');
 		$this->form_validation->set_rules('TanggalPesan', 'Tanggal Pesan', 'required');
 		$this->form_validation->set_rules('TanggalBerangkat', 'Tanggal Berangkat', 'required');
+		$this->form_validation->set_rules('StatusPemesanan', 'Status Pemesanan', 'required');
 
 		if ($this->form_validation->run() === FALSE) {
 			$this->session->set_flashdata('error', validation_errors());
 			redirect('alur/pemesanan/pemesanan');
 		} else {
-			$data_alur_idpemesanan = $this->alur_model->store();
+			$data_alur_idpemesanan = $this->alur_model->store_pemesanan();
 			$alurdata = array(
 				'info_alur_pemesanan'  => $data_alur_idpemesanan
 			);
@@ -86,9 +87,14 @@ class Alur extends CI_Controller {
 			$this->session->set_flashdata('error', 'Anda harus mengisi formulir secara bertahap');
 			redirect('alur/pemesanan/pemesanan');
 		}
-		$data_get1 = $this->kursi_model->get_list();
+		$data_get1 = $this->alur_model->get_list_bis_pesanan_kursi($this->session->info_alur_pemesanan);
+		$data_get2 = $this->alur_model->get_data_pemesanan($this->session->info_alur_pemesanan);
+		$data_get3 = $this->alur_model->get_list_available_kursi($this->session->info_alur_pemesanan);
+
 		$data = array(
-			'info_kursi' => $data_get1,
+			'info_pesanan_kursi' => $data_get1,
+			'info_pemesanan' => $data_get2,
+			'info_kursi_tersedia' => $data_get3,
             'title' => 'Alur (Pemesanan Kursi)'
         );
 		$this->slice->view('pages.alur.pemesanan.form_pemesanan_kursi', $data);
@@ -121,7 +127,13 @@ class Alur extends CI_Controller {
 			$this->session->set_flashdata('error', 'Anda harus mengisi formulir secara bertahap');
 			redirect('alur/pemesanan/pemesanan_kursi');
 		}
+		$data_get1 = $this->alur_model->get_data_total_pembayaran($this->session->info_alur_pemesanan);
+		$data_get2 = $this->alur_model->get_data_pemesanan($this->session->info_alur_pemesanan);
+		$data_get3 = $this->alur_model->get_list_bis_pesanan_kursi($this->session->info_alur_pemesanan);
 		$data = array(
+			'info_total_bayar' => $data_get1,
+			'info_pemesanan' => $data_get2,
+			'info_pesanan_kursi' => $data_get3,
             'title' => 'Alur (Pembayaran)'
         );
 		$this->slice->view('pages.alur.pemesanan.form_pembayaran', $data);
@@ -130,15 +142,17 @@ class Alur extends CI_Controller {
 	public function store_pembayaran()
 	{
 		$this->form_validation->set_rules('IdPemesanan', 'ID Pemesanan', 'required');
-		$this->form_validation->set_rules('TotalBayar', 'Total Bayar', 'required');
-		$this->form_validation->set_rules('Status', 'Status', 'required');
+		$this->form_validation->set_rules('TotalBayar', 'Total Bayar', 'required|numeric|max_length[7]');
+		$this->form_validation->set_rules('Bayar', 'Bayar', 'required|numeric|max_length[7]');
+		$this->form_validation->set_rules('Kembalian', 'Kembalian', 'required|numeric|max_length[7]');
+		$this->form_validation->set_rules('Status', 'Status Pembayaran', 'required');
 
 		if ($this->form_validation->run() === FALSE) {
 			$this->session->set_flashdata('error', validation_errors());
 			redirect('alur/pemesanan/pembayaran');
 		} else {
-			$this->pembayaran_model->store();
-			$alurdata = array('info_alur_pemesan', 'info_alur_pemesanan');
+			$this->alur_model->store_pembayaran();
+			$alurdata = array('info_alur_pemesanan');
 			$this->session->unset_userdata($alurdata);
 			$this->session->set_flashdata('success', 'Alur Pemesanan berhasil diproses! Anda dikembalikan ke halaman beranda');
 			redirect('');

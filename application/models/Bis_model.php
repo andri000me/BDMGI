@@ -26,8 +26,7 @@ class Bis_model extends CI_Model {
 		$data = array(
 			'PlatNomor' => $this->input->post('PlatNomor'),
 			'IdBisJenis' => $this->input->post('IdBisJenis'),
-			'NamaBis' => $this->input->post('NamaBis'),
-			'Harga' => $this->input->post('Harga')
+			'NamaBis' => $this->input->post('NamaBis')
 		);
 		return $this->db->insert('bis', $data);
 	}
@@ -37,8 +36,7 @@ class Bis_model extends CI_Model {
 		$data = array(
 			'PlatNomor' => $this->input->post('PlatNomor'),
 			'IdBisJenis' => $this->input->post('IdBisJenis'),
-			'NamaBis' => $this->input->post('NamaBis'),
-			'Harga' => $this->input->post('Harga')
+			'NamaBis' => $this->input->post('NamaBis')
 		);
 		$this->db->where('PlatNomor', $id);
 		return $this->db->update('bis', $data);

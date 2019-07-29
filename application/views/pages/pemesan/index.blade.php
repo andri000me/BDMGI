@@ -66,6 +66,7 @@
 									<th>Umur</th>
 									<th>Jenis Kelamin</th>
 									<th>Nomor Telepon</th>
+									<th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -73,7 +74,7 @@
                                 <tr>
 									<td>{{ $info_data->NoIdentitas }}</td>
 									<td>{{ $info_data->NamaPemesan }}</td>
-									<td>{{ $info_data->Ukuran }}</td>
+									<td>{{ $info_data->Umur }}</td>
 									<td>{{ $info_data->JenisKelamin }}</td>
 									<td>{{ $info_data->NoTelepon }}</td>
 									<td>

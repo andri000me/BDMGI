@@ -62,6 +62,7 @@
 									<th>ID Bis Jenis</th>
 									<th>Nama Jenis</th>
 									<th>Kapasitas</th>
+                                    <th>Harga</th>
 									<th>Aksi</th>
                                 </tr>
                             </thead>
@@ -71,6 +72,7 @@
 									<td>{{ $info_data->IdBisJenis }}</td>
 									<td>{{ $info_data->NamaJenis }}</td>
 									<td>{{ $info_data->Kapasitas }}</td>
+                                    <td>{{ $info_data->Harga }}</td>
 									<td>
 										<a href="{{ site_url('bisjenis/edit/'.$info_data->IdBisJenis) }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
 										<a href="{{ site_url('bisjenis/destroy/'.$info_data->IdBisJenis) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>

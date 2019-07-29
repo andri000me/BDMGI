@@ -63,11 +63,7 @@
 									</div>
 									<div class="form-group">
                                         <label for="NamaBis">Nama Bis</label>
-                                        <input type="text" class="form-control" name="NamaBis" placeholder="Format: MGI-[JENISBIS]-[(NAMAPEMILIKSTNK)]" value="{{ @$info ? @$info->NamaBis : '' }}">
-									</div>
-									<div class="form-group">
-                                        <label for="Harga">Harga Tiket Bis</label>
-                                        <input type="text" class="form-control" name="Harga" placeholder="Harga Tiket Bis" value="{{ @$info ? @$info->Harga : '' }}">
+                                        <input type="text" class="form-control" name="NamaBis" placeholder="Merk, Tipe atau Model Bis" value="{{ @$info ? @$info->NamaBis : '' }}">
 									</div>
                                 </div>
                             </div>

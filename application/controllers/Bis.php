@@ -37,7 +37,6 @@ class Bis extends CI_Controller {
 		$this->form_validation->set_rules('PlatNomor', 'Plat Nomor (Bis)', 'required');
 		$this->form_validation->set_rules('IdBisJenis', 'Bis Jenis', 'required');
 		$this->form_validation->set_rules('NamaBis', 'Nama Bis', 'required');
-		$this->form_validation->set_rules('Harga', 'Harga Bis', 'required');
 
 		if($this->form_validation->run() === FALSE) {
 			$this->session->set_flashdata('error', validation_errors());
@@ -68,7 +67,6 @@ class Bis extends CI_Controller {
 		$this->form_validation->set_rules('PlatNomor', 'Plat Nomor (Bis)', 'required');
 		$this->form_validation->set_rules('IdBisJenis', 'Bis Jenis', 'required');
 		$this->form_validation->set_rules('NamaBis', 'Nama Bis', 'required');
-		$this->form_validation->set_rules('Harga', 'Harga Bis', 'required');
 
 		if($this->form_validation->run() === FALSE) {
 			$this->session->set_flashdata('error', validation_errors());

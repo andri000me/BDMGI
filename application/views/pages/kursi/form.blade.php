@@ -64,8 +64,8 @@
 									<div class="form-group">
 										<label for="StatusKursi">Status Kursi</label>
 										<select class="form-control" name="StatusKursi">
-											<option value="Bisa Dipakai" {{ (@$info->StatusKursi=='Bisa Dipakai') ? 'selected' : '' }}>Bisa Dipakai</option>
-											<option value="Belum Bisa Dipakai" {{ (@$info->StatusKursi=='Belum Bisa Dipakai') ? 'selected' : '' }}>Belum Bisa Dipakai</option>
+											<option value="Kosong" {{ (@$info->StatusKursi=='Kosong') ? 'selected' : '' }}>Kosong</option>
+											<option value="Terisi" {{ (@$info->StatusKursi=='Terisi') ? 'selected' : '' }}>Terisi</option>
 										</select>
 									</div>
                                 </div>

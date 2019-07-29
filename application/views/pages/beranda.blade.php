@@ -40,12 +40,6 @@
 			<div class="row">
 				Silahkan anda bisa mengakses halaman yang ada
 			</div>
-			<div class="row">
-				&nbsp;
-			</div>
-			<div class="row">
-				<a href="alur/pemesanan/pemesan" class="btn btn-primary btn-xs"><span class="fa fa-plus"></span> Tambah Alur Pemesanan</a>
-			</div>
 		</div>
 		<!-- /.card-footer-->
 	</div>

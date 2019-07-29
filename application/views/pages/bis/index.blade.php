@@ -50,7 +50,6 @@
 										<option>Plat Nomor</option>
 										<option>Jenis Bis (ID Jenis Bis)</option>
 										<option>Nama Bis</option>
-										<option>Harga</option>
                                     </select>
                                 </label>
                             </div>
@@ -63,7 +62,6 @@
 									<th>Plat Nomor</th>
 									<th>Jenis Bis (ID Jenis Bis)</th>
 									<th>Nama Bis</th>
-									<th>Harga</th>
 									<th>Aksi</th>
                                 </tr>
                             </thead>
@@ -73,7 +71,6 @@
 									<td>{{ $info_data->PlatNomor }}</td>
 									<td>{{ $info_data->IdBisJenis }}</td>
 									<td>{{ $info_data->NamaBis }}</td>
-									<td>{{ $info_data->Harga }}</td>
 									<td>
 										<a href="{{ site_url('bis/edit/'.$info_data->PlatNomor) }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
 										<a href="{{ site_url('bis/destroy/'.$info_data->PlatNomor) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
