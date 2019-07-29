@@ -24,7 +24,7 @@ class Pemesan_model extends CI_Model {
 	public function store()
 	{
 		$data = array(
-			'NoIdentitas' => $this->input->post('Noidentitas'),
+			'NoIdentitas' => $this->input->post('NoIdentitas'),
 			'NamaPemesan' => $this->input->post('NamaPemesan'),
 			'Umur' => $this->input->post('Umur'),
 			'JenisKelamin' => $this->input->post('JenisKelamin'),
